@@ -10,3 +10,11 @@ terraform {
 provider "aws" {
   region = var.region
 }
+
+terraform {
+  backend "s3" {
+    bucket         = "guwan-state-bucket"
+    key            = "cs2/terraform.tfstate"
+    region         = "eu-central-1"
+  }
+}
